@@ -1553,7 +1553,7 @@ exports.BattleAbilities = {
 					this.add('-ability', pokemon, 'Intimidate', 'boost');
 					activated = true;
 				}
-				if (target.volatiles['substitute']) {
+				if (foeTarget.volatiles['substitute']) {
 					this.add('-immune', foeTarget, '[msg]');
 				} else {
 					this.boost({atk: -1}, foeTarget, pokemon);
@@ -2049,7 +2049,6 @@ exports.BattleAbilities = {
 			let cureList = [];
 			let noCureCount = 0;
 			for (let allyTarget of pokemon.side.active) {
-				let target = active[i];
 				// pokemon not statused
 				if (!allyTarget || !allyTarget.status) {
 					// this.add('-message', "" + curPoke + " skipped: not statused or doesn't exist");
